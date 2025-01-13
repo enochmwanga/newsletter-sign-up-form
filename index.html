@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="main.js"></script>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <div class="content-container" id="content-container">
+      <picture>
+        <source
+          media="(min-width: 1024px)"
+          srcset="illustration-sign-up-desktop.svg"
+        />
+        <source
+          media="(min-width:320px)"
+          srcset="illustration-sign-up-mobile.svg"
+        />
+        <img
+          src="illustration-sign-up-desktop.svg"
+          alt="desktop-image"
+          style="width: auto"
+          id="#desktop-image"
+        />
+      </picture>
+      <div class="info-container">
+        <h1>Stay updated!</h1>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
 
-  <!-- Sign-up form start -->
+        <ul>
+          <li><span>Product discovery and building what matters</span></li>
+          <li><span>Measuring to ensure updates are a success</span></li>
+          <li><span>And much more!</span></li>
+        </ul>
 
-  Stay updated!
+        <form novalidate>
+          <label for="mail"
+            >Email address</label>
+            <span id="error" aria-live="polite"></span>
+            <input
+              type="text"
+              name="mail"
+              placeholder="email@company.com"
+              id="mail"
+              required
+            />
 
-  Join 60,000+ product managers receiving monthly updates on:
+          <button id="subscribe-btn">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+    </div>
+    <div class="form-popup" id="form-popup">
+      <div class="message-container">
+        <img src="assets/images/icon-success.svg" />
+        <p>Thanks for subscribing!</p>
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
+        <p>
+          A confirmation email has been sent to
+          <span id="validated-email"></span> Please open it and click the button
+          inside to confirm your subscription.
+        </p>
+      </div>
 
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <button type="button" id="dismiss-btn">Dismiss message</button>
+    </div>
+  </body>
 </html>
